@@ -13,6 +13,7 @@
 #include "Shader.h"
 #include "RawMesh.h"
 #include "Texture.h"
+#include "SOIL.h"
 
 //Characters for the Text map.
 struct Character {
@@ -73,9 +74,11 @@ public:
 	//Load a shader and compile it.
 	Shader LoadShader(const GLchar *vShaderFile, const GLchar *fShaderFile, std::string name);
 	// Retrieves a stored sader
-	Shader GetShader(std::string name);
+	Shader& GetShader(std::string name);
 
 	Texture loadTexture(const GLchar *file, GLboolean alpha, std::string name);
+	Texture loadTextureSOIL(const GLchar *file, GLboolean alpha, std::string name);
+
 	Texture GetTexture(std::string name);
 
 	//Register a mesh to prevent reloading the file.
